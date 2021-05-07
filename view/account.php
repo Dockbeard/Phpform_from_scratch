@@ -3,7 +3,7 @@ require('../model/User.php');
 session_start();
 if (!isset($_SESSION['email']))
 {
-    header("Location: http://localhost/UPYNE PROJECT/view/registration.php");
+    header("Location: http://localhost/Phpform_from_scratch/view/registration.php");
 }
 $user = new User();
 $data = $user->sessionUser($_SESSION['email']);?>
@@ -35,8 +35,8 @@ $data = $user->sessionUser($_SESSION['email']);?>
     </div>
     <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Valider les changements</button>
 </form>
-<a href="http://localhost/UPYNE PROJECT/controller/disconnect.php"><button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Déconnexion</button></a>
-<a href="http://localhost/UPYNE PROJECT/controller/desactivate.php"><button class="btn btn-outline-success my-2 my-sm-0 button1" type="submit">Désactiver le compte</button></a>
+<a href="http://localhost/Phpform_from_scratch/controller/disconnect.php"><button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Déconnexion</button></a>
+<a href="http://localhost/Phpform_from_scratch/controller/desactivate.php"><button class="btn btn-outline-success my-2 my-sm-0 button1" type="submit">Désactiver le compte</button></a>
 
 
 

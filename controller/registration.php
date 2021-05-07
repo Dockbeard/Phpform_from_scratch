@@ -22,14 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['username'];
     if (!preg_match('/^[a-zA-Z0-9\s]+$/', $name)) {
         $nameError = 'Name can only contain letters, numbers and white spaces';
-        header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/registration.php');
     }
 
     //email verification
     $email = $_POST['email'];
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailError = 'Invalid Email';
-        header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/registration.php');
     }
 
     // password verification
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //check if password is completely secured
     if (!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
         $passwordError = 'Please enter a long password';
-        header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/registration.php');
     }
 
     //check if the email already exist in db
@@ -66,13 +66,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['email'] = $_POST['email'];
         $data = $newConnect->sessionUser($_SESSION['email']);
 
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
     } else {
-        header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/registration.php');
     }
 
 } else {
-    header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+    header('Location: http://localhost/Phpform_from_scratch/view/registration.php');
 }
 
 

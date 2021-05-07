@@ -4,4 +4,4 @@ session_unset();
 session_destroy();
 
 
-header('Location: http://localhost/UPYNE PROJECT/view/registration.php');
+header('Location: http://localhost/Phpform_from_scratch/view/registration.php');

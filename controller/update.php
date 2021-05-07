@@ -23,14 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['username'];
     if (!preg_match('/^[a-zA-Z0-9\s]+$/', $name)) {
         $nameError = 'Name can only contain letters, numbers and white spaces';
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
     }
 
     //email verification
     $email = $_POST['email'];
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $emailError = 'Invalid Email';
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
     }
 
     // password verification
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //check if password is completely secured
     if (!$uppercase || !$lowercase || !$number || strlen($password) < 8) {
         $passwordError = 'Please enter a long password';
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
     }
 
     $user = new User();
@@ -64,12 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $newConnect = new User();
         $newRequest = $newConnect->updateUser($_POST['username'], $_POST['email'], $passwordHash);
 
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
 
     } else {
-        header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+        header('Location: http://localhost/Phpform_from_scratch/view/account.php');
     }
 } else {
-    header('Location: http://localhost/UPYNE PROJECT/view/account.php');
+    header('Location: http://localhost/Phpform_from_scratch/view/account.php');
 }
 
