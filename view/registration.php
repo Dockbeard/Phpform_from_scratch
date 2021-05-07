@@ -25,5 +25,6 @@
 
     <button type="submit" class="btn btn-primary">S'inscrire</button>
 </form>
+<a href="http://localhost/Phpform_from_scratch/view/connection.php"><button class="btn btn-outline-success my-2 my-sm-0">Se connecter</button></a>
 <?php $content = ob_get_clean(); ?>
 <?php require('../templates/template.php'); ?>
