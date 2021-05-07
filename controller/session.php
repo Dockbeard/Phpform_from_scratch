@@ -1,5 +1,5 @@
 <?php
-require('../model/User.php');
+require('./model/User.php');
 session_start();
 if (!isset($_SESSION['email']))
 {
