@@ -2,12 +2,16 @@
 
 class User {
     private $bdd;
+    private $dbname = 'upyne';
+    private $username = 'admin';
+    private $password = 'admin';
+
     public function __construct()
     {
-        $this->bdd = new PDO('mysql:host=localhost;dbname=upyne','admin','admin', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $this->bdd = new PDO('mysql:host=localhost;dbname=' . $this->dbname,$this->username,$this->password, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
 
-        public function sessionUser($email)
+    public function sessionUser($email)
     {
         $sql = 'SELECT * FROM users WHERE email = :email ;';
         $statement = $this->bdd->prepare($sql);
@@ -27,15 +31,7 @@ class User {
 
         return $statement->fetch() ;
     }
-
-    public function getUser()
-    {
-        $sql = 'SELECT * FROM users;';
-        $statement = $this->bdd->prepare($sql);
-        $statement->execute();
-        return $statement->fetchAll();
-    }
-
+    
     public function registrationUser($name, $email, $password)
     {
         $sql = 'INSERT INTO users (username, email, password) 
@@ -65,16 +61,6 @@ class User {
         $statement->bindParam(':email2', $_SESSION['email'], PDO::PARAM_STR);
         return $statement->execute();
     }
-
-//    public function connectUser($email, $password)
-//    {
-//        $sql = 'SELECT * FROM users WHERE email = :email AND password = :password;';
-//        $statement = $this->bdd->prepare($sql);
-//        $statement->bindParam(':email', $email, PDO::PARAM_STR);
-//        $statement->bindParam(':password', $password, PDO::PARAM_STR);
-//        $statement->execute();
-//        return $statement->fetchAll() ;
-//    }
 
 
 

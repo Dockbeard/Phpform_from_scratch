@@ -71,6 +71,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 } else {
     header('Location: http://localhost/UPYNE PROJECT/view/account.php');
-    var_dump(6);die();
 }
 
