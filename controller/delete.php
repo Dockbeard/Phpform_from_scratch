@@ -11,5 +11,3 @@ require('../model/User.php');
     session_destroy();
 
     header('Location: http://localhost/Phpform_from_scratch/view/account.php');
-
-

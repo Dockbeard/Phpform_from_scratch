@@ -72,4 +72,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     header('Location: http://localhost/Phpform_from_scratch/view/account.php');
 }
-

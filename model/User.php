@@ -29,9 +29,6 @@ class User {
         return $statement->execute();
     }
 
-
-
-
     public function emailCheck($email, $id)
     {
         $sql = 'SELECT * FROM users WHERE email = :email AND id != :id ;';
@@ -72,14 +69,4 @@ class User {
         $statement->bindParam(':email2', $_SESSION['email'], PDO::PARAM_STR);
         return $statement->execute();
     }
-
-
-
-
-
-
-
-
-
-
 }
