@@ -11,6 +11,7 @@
         <label for="password">Mot de passe</label>
         <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
         <span class="error"><?php if (isset($nameError)) echo $passwordError ?></span><br>
+        <small id="passwordHelp" class="form-text text-muted">Un mot de passe doit contenir au minimum 8 caractères, à savoir : au moins une lettre minuscule et une lettre majuscule, un caractère spécial et un chiffre.</small>
     </div>
     <div class="form-group">
         <label for="password">Mot de passe confirmation</label>
