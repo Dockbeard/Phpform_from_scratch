@@ -36,7 +36,7 @@ $data = $user->sessionUser($_SESSION['email']);?>
     <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Valider les changements</button>
 </form>
 <a href="http://localhost/Phpform_from_scratch/controller/disconnect.php"><button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Déconnexion</button></a>
-<a href="http://localhost/Phpform_from_scratch/controller/desactivate.php"><button class="btn btn-outline-success my-2 my-sm-0 button1" type="submit">Désactiver le compte</button></a>
+<a href="http://localhost/Phpform_from_scratch/controller/delete.php"><button class="btn btn-outline-success my-2 my-sm-0 button1" type="submit">Supprimer le compte</button></a>
 
 
 

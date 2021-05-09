@@ -21,6 +21,17 @@ class User {
         return $statement->fetch() ;
     }
 
+    public function deleteUser($email)
+    {
+        $sql = 'DELETE FROM users WHERE email = :email ;';
+        $statement = $this->bdd->prepare($sql);
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
+        return $statement->execute();
+    }
+
+
+
+
     public function emailCheck($email, $id)
     {
         $sql = 'SELECT * FROM users WHERE email = :email AND id != :id ;';
@@ -31,7 +42,7 @@ class User {
 
         return $statement->fetch() ;
     }
-    
+
     public function registrationUser($name, $email, $password)
     {
         $sql = 'INSERT INTO users (username, email, password) 
